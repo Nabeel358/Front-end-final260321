@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">{props.brand}</a>
+          <Link className="navbar-brand" to="/">{props.brand}</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
           data-bs-target="#navbarNav" aria-controls="navbarNav"
            aria-expanded="false" aria-label="Toggle navigation">
@@ -12,15 +13,18 @@ const NavBar = (props) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">{props.links[0]}</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">{props.links[1]}</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">{props.links[2]}</a>
-              </li>
+              {
+                props.links.map(
+                  (link) =>
+                  <li className="nav-item">
+                    <Link className="nav-link" 
+                    aria-current="page" 
+                    to={link.path}>
+                        {link.label}
+                    </Link>
+                  </li>
+                )
+              }
             </ul>
           </div>
         </div>

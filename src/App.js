@@ -1,56 +1,21 @@
 import React from 'react';
-import Carousel from './Carousel';
-import NavBar from './NavBar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import LayoutRoute from './LayoutRoute'
+import MainScreen from './MainScreen';
+import AboutScreen from './AboutScreen';
+import RegistrationScreen from './RegistrationScreen';
 
 
-function App() {
-  return (
-    <div>
-      <NavBar 
-        brand="My App" 
-        links={
-          [
-            {
-              'path': '/',
-              'label': 'Home'
-            },
-            {
-              'path': '/about',
-              'label': 'About'
-            },
-            {
-              'path': '/contact',
-              'label': 'Contact'
-            }
-          ]
-        } 
-      />
-
-      <div className="content" style={{minHeight: 'calc(100vh - 112px)'}}>
-       <Carousel images={['./zayed-mosque.jpg', './dubai-night.jpg']}/>
-      </div>
-
-      <NavBar 
-        brand="My App" 
-        links={
-          [
-            {
-              'path': '/',
-              'label': 'Home'
-            },
-            {
-              'path': '/about',
-              'label': 'About'
-            },
-            {
-              'path': '/contact',
-              'label': 'Contact'
-            }
-          ]
-        } 
-      />
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <LayoutRoute path="/" exact={true} component={MainScreen}  />
+                <LayoutRoute path="/about" exact={true} component={AboutScreen}  />
+                <LayoutRoute path="/registration" exact={true} component={RegistrationScreen}  />
+            </Switch>
+        </BrowserRouter>
+    )    
+};
 
 export default App;
