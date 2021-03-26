@@ -9,12 +9,16 @@ const LayoutRoute = (props) => {
 
             { /* Main navgation */ }
             <NavBar 
-                brand="My App" 
+                brand="OwnHomes" 
                 links={
                 [
                     {
                     'path': '/',
                     'label': 'Home'
+                    },
+                    {
+                    'path': '/properties',
+                    'label': 'Properties'
                     },
                     {
                     'path': '/about',
@@ -39,12 +43,16 @@ const LayoutRoute = (props) => {
 
             { /* Footer navigation */ }
             <NavBar 
-                brand="My App" 
+                brand="OwnHomes" 
                 links={
                 [
                     {
                     'path': '/',
                     'label': 'Home'
+                    },
+                    {
+                    'path': '/properties',
+                    'label': 'Properties'
                     },
                     {
                     'path': '/about',

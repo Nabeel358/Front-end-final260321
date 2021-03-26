@@ -2,23 +2,25 @@ import React from 'react';
 import Carousel from './Carousel';
 import Card from './Card';
 import NavBar from './NavBar';
+import Grid from './Grid';
+import Card2 from './Card2';
 
 
 const cardContent = [
   {
-    title: 'Visit Dubai',
-    description: 'Dubai is the commercial center of UAE',
-    imgSrc: './dubai-night.jpg'
+    title: 'Affordable properties',
+    description: 'Something for everyone',
+    imgSrc: './house2.jpg'
   },
   {
-    title: 'Explore Abu Dhabi',
-    description: 'Click to learn about the beautiful capital of the UAE',
-    imgSrc: './zayed-mosque.jpg'
+    title: 'Explore our villas',
+    description: 'In the heart of Abu Dhabi',
+    imgSrc: './house3.jpg'
   },
   {
-    title: 'Ras Al Khaimah Tour',
-    description: 'The natural resort of the UAE. Click here to learn more!',
-    imgSrc: 'https://images.unsplash.com/photo-1591609282229-c080f8c25ef4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80'
+    title: 'View our apartments',
+    description: 'For bachelors and families',
+    imgSrc: './apartment1.jpg'
   },
 ]
 
@@ -26,11 +28,26 @@ function MainScreen() {
   return (
     <div>
 
-       { /* Carousel goes here */ }
-       <Carousel images={['./zayed-mosque.jpg', './dubai-night.jpg']}/>
+      { /* Carousel goes here */ }
+       <Carousel images={['./abudhabi1.jpg', './house1.jpg']}/>
+
+
+       <div class="tcontainer">
+        <div class="ticker-wrap">
+            <div class="ticker-move">
+                <div class="ticker-item">Best time to invest in your own home.</div>
+                <div class="ticker-item">Property prices down by 13% in Q1 2021.</div>
+                <div class="ticker-item">With the successful implementation of the covid vaccination plan, the UAE economy is expected to rebound.</div>
+             </div>
+        </div>
+    </div>
+
+
+
+
 
        { /* Cards go here */ }
-       <div className="container my-4">
+       <div className="container-fluid my-4 mb-5">
          <div className="row">
 
             {
@@ -48,13 +65,56 @@ function MainScreen() {
                     )
                 }
               )
-            }
+               }
             
           </div>
        </div>
+    {/*Card2 included here*/} 
+    <div>
+     <Card2 className="bg-white">
+
+     </Card2>
+
+      </div>
+
+
+      {/*Grid*/}
+
+    <div className="container-fluid border: none mt-5">
+    <div className="row ">
+   
+    <Grid
+         className="background: #1A5276">
+
+
+    </Grid>
+  </div>  
+  </div>
+
+
+
+
 
     </div>
+
+
+
+
+
   );
 }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 
 export default MainScreen;

@@ -8,7 +8,7 @@ const Carousel = (props) => {
             <div style={
               {
                 width: '100%',
-                height: '350px',
+                height: '600px',
                 backgroundImage: 'url(' + props.images[0] + ')',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center center'
@@ -19,7 +19,7 @@ const Carousel = (props) => {
             <div style={
               {
                 width: '100%',
-                height: '350px',
+                height: '600px',
                 backgroundImage: 'url(' + props.images[1] + ')',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center center'
